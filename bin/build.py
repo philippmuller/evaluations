@@ -2,6 +2,9 @@
 ''' Quick script to build the refereeing documents.
 '''
 
+# standard library
+import os
+
 # project library
 from _auxiliary import *
 
@@ -12,8 +15,12 @@ DOCUMENTS = ['doc']
 '''
 if __name__ == '__main__':
     
-	
-    
+	# Clean project
+    os.system('python bin/clean.py')
+
+    # Create graphs
+    os.system('python graphs/make_graphs.py')
+
     # Compile documents.
     for type_ in ['pdflatex', 'bibtex', 'pdflatex', 'pdflatex']:
 
